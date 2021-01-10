@@ -102,6 +102,18 @@ class RestaurantTest {
                 ()->restaurant.removeFromMenu("French fries"));
     }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    //>>>>>>>>>>>>>>>>>>>>>>>>Calculate Order Total>>>>>>>>>>>>>>
+    // functionality to calculate order total
+    //method should take a list of items and return the total order value
+    // if nothing is passed should return zero
 
+    @Test
+    public void return_the_total_order_value_when_items_are_selected(){
+
+        //String itemName1=restaurant.getMenu().get(0).getName(); //Sweet corn soup --119
+        //String itemName2=restaurant.getMenu().get(0).getName(); //Vegetable lasagne --269
+        assertEquals(388.00,restaurant.calculateOrderTotal( "Sweet corn soup","Vegetable lasagne"));
+    }
+    // <<<<<<<<<<<<<<<<<<<Calculate Order Total<<<<<<<<<<<<<<<<<<
 
 }

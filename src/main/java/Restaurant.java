@@ -64,4 +64,10 @@ public class Restaurant {
         return name;
     }
 
+
+    public double calculateOrderTotal(String ...itemName){
+
+        return 0;
+    }
+
 }
