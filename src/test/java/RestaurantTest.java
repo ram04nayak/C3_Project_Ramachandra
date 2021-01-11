@@ -9,6 +9,7 @@ import java.time.LocalTime;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.greaterThan;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
@@ -108,11 +109,12 @@ class RestaurantTest {
     // if nothing is passed should return zero
 
     @Test
-    public void return_the_total_order_value_when_items_are_selected(){
+    public void return_the_total_order_value_when_items_are_selected() throws itemNotFoundException{
 
         //String itemName1=restaurant.getMenu().get(0).getName(); //Sweet corn soup --119
         //String itemName2=restaurant.getMenu().get(0).getName(); //Vegetable lasagne --269
-        assertEquals(388.00,restaurant.calculateOrderTotal( "Sweet corn soup","Vegetable lasagne"));
+        assertEquals(388,restaurant.calculateOrderTotal( "Sweet corn soup","Vegetable lasagne"));
+        assertThat(restaurant.calculateOrderTotal( "Sweet corn soup","Vegetable lasagne"),greaterThan(0));
     }
     // <<<<<<<<<<<<<<<<<<<Calculate Order Total<<<<<<<<<<<<<<<<<<
 

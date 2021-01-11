@@ -65,9 +65,15 @@ public class Restaurant {
     }
 
 
-    public double calculateOrderTotal(String ...itemName){
-
-        return 0;
+    public int calculateOrderTotal(String ...itemNames){
+        int total=0;
+        for(String itemName:itemNames){
+           Item item= findItemByName(itemName);
+            if(! item.getName().isEmpty()){
+                total+=item.getPrice();
+            }
+        }
+        return total;
     }
 
 }
